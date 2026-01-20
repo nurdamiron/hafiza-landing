@@ -1,0 +1,77 @@
+name: Deploy Landing to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Production EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create deployment archive
+        run: |
+          tar --exclude='.git' \
+              --exclude='*.md' \
+              -czf hafiza-landing.tar.gz .
+
+      - name: Configure SSH
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$EC2_SSH_KEY" > ~/.ssh/ec2-key.pem
+          chmod 600 ~/.ssh/ec2-key.pem
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Upload to EC2
+        run: |
+          scp -i ~/.ssh/ec2-key.pem \
+              hafiza-landing.tar.gz \
+              ubuntu@${{ secrets.EC2_HOST }}:/tmp/
+
+      - name: Deploy on EC2
+        run: |
+          ssh -i ~/.ssh/ec2-key.pem ubuntu@${{ secrets.EC2_HOST }} << 'ENDSSH'
+            set -e
+
+            echo "📂 Backing up old version..."
+            sudo rm -rf /var/www/hafiza.kz.backup 2>/dev/null || true
+            sudo cp -r /var/www/hafiza.kz /var/www/hafiza.kz.backup 2>/dev/null || true
+
+            echo "📦 Extracting new build..."
+            cd /tmp
+            mkdir -p landing-extract
+            tar -xzf hafiza-landing.tar.gz -C landing-extract
+
+            echo "🚀 Deploying to production..."
+            sudo rm -rf /var/www/hafiza.kz/*
+            sudo cp -r landing-extract/* /var/www/hafiza.kz/
+
+            echo "🧹 Cleanup..."
+            rm -rf /tmp/hafiza-landing.tar.gz /tmp/landing-extract
+
+            echo "🎉 Deployment complete!"
+          ENDSSH
+
+      - name: Health Check
+        run: |
+          sleep 3
+          curl -f https://hafiza.kz || exit 1
+
+      - name: Notify Success
+        if: success()
+        run: |
+          echo "✅ Landing deployment successful!"
+          echo "🌐 Site: https://hafiza.kz"
+
+      - name: Notify Failure
+        if: failure()
+        run: |
+          echo "❌ Deployment failed!"
