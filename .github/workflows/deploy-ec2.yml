@@ -19,7 +19,8 @@ jobs:
         run: |
           tar --exclude='.git' \
               --exclude='*.md' \
-              -czf hafiza-landing.tar.gz .
+              --warning=no-file-changed \
+              -czf hafiza-landing.tar.gz . || [[ $? -eq 1 ]]
 
       - name: Configure SSH
         env:
