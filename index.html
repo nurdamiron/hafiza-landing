@@ -246,11 +246,11 @@
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 2.75rem;
       font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 24px;
-      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
     }
 
     .hero h1 span {
@@ -278,7 +278,7 @@
     }
 
     .stat-value {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 800;
       color: var(--accent);
     }
@@ -351,11 +351,11 @@
     }
 
     .section-title {
-      font-size: 2.5rem;
-      font-weight: 800;
+      font-size: 2rem;
+      font-weight: 700;
       color: var(--gray-900);
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
     }
 
     .section-subtitle {
@@ -536,101 +536,6 @@
       opacity: 0.8;
     }
 
-    /* ========== PRICING ========== */
-    .pricing {
-      padding: 100px 0;
-      background: var(--gray-50);
-    }
-
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .pricing-card {
-      background: var(--white);
-      border-radius: 24px;
-      padding: 40px;
-      text-align: center;
-      border: 2px solid var(--gray-100);
-      transition: all 0.3s ease;
-    }
-
-    .pricing-card.featured {
-      border-color: var(--primary);
-      transform: scale(1.05);
-      box-shadow: 0 30px 60px rgba(74, 10, 44, 0.15);
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-    }
-
-    .pricing-card.featured:hover {
-      transform: scale(1.05) translateY(-10px);
-    }
-
-    .pricing-label {
-      display: inline-block;
-      padding: 6px 16px;
-      background: var(--accent-light);
-      color: var(--primary);
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .pricing-card.featured .pricing-label {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .pricing-card h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .pricing-price {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin: 20px 0;
-    }
-
-    .pricing-price span {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--gray-600);
-    }
-
-    .pricing-features {
-      list-style: none;
-      margin: 30px 0;
-      text-align: left;
-    }
-
-    .pricing-features li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--gray-100);
-      color: var(--gray-600);
-    }
-
-    .pricing-features li:last-child {
-      border-bottom: none;
-    }
-
-    .pricing-features .material-symbols-outlined {
-      color: var(--accent);
-      font-size: 20px;
-    }
-
     /* ========== FAQ ========== */
     .faq {
       padding: 100px 0;
@@ -695,9 +600,9 @@
     }
 
     .cta h2 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 16px;
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
     .cta p {
@@ -815,7 +720,7 @@
       }
 
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
       }
 
       .hero-stats {
@@ -830,8 +735,7 @@
         display: none;
       }
 
-      .features-grid,
-      .pricing-cards {
+      .features-grid {
         grid-template-columns: 1fr;
       }
 
@@ -870,11 +774,11 @@
       }
 
       .hero h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
       }
 
       .section-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
       }
 
       .process-steps {
@@ -906,7 +810,7 @@
       }
 
       .cta h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
       }
     }
 
@@ -969,7 +873,6 @@
           <a href="#features">Артықшылықтар</a>
           <a href="#gallery">Жұмыстар</a>
           <a href="#process">Процесс</a>
-          <a href="#pricing">Бағалар</a>
           <a href="#faq">Сұрақтар</a>
         </nav>
 
@@ -1190,113 +1093,6 @@
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">
-          <span class="material-symbols-outlined">payments</span>
-          Бағалар
-        </div>
-        <h2 class="section-title">Қолжетімді бағалар</h2>
-        <p class="section-subtitle">
-          Әр бюджетке сай нұсқалар
-        </p>
-      </div>
-
-      <div class="pricing-cards">
-        <div class="pricing-card">
-          <span class="pricing-label">Эконом</span>
-          <h3>Базалық</h3>
-          <div class="pricing-price">100₸ <span>/ метр</span></div>
-          <ul class="pricing-features">
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Стандарт маталар
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Қарапайым дизайн
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Тегін өлшем
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Орнату қосылған
-            </li>
-          </ul>
-          <a href="https://wa.me/77756720862" class="btn btn-outline" style="width: 100%;">
-            Таңдау
-          </a>
-        </div>
-
-        <div class="pricing-card featured">
-          <span class="pricing-label">Танымал</span>
-          <h3>Оптималды</h3>
-          <div class="pricing-price">300₸ <span>/ метр</span></div>
-          <ul class="pricing-features">
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Премиум маталар
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Жеке дизайн жобасы
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Тегін өлшем + кеңес
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Орнату + карниз
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              1 жыл кепілдік
-            </li>
-          </ul>
-          <a href="https://wa.me/77756720862" class="btn btn-primary" style="width: 100%;">
-            Таңдау
-          </a>
-        </div>
-
-        <div class="pricing-card">
-          <span class="pricing-label">Люкс</span>
-          <h3>Премиум</h3>
-          <div class="pricing-price">500₸ <span>/ метр</span></div>
-          <ul class="pricing-features">
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Эксклюзив маталар
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              Дизайнермен жұмыс
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              3D визуализация
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              VIP орнату
-            </li>
-            <li>
-              <span class="material-symbols-outlined">check_circle</span>
-              2 жыл кепілдік
-            </li>
-          </ul>
-          <a href="https://wa.me/77756720862" class="btn btn-outline" style="width: 100%;">
-            Таңдау
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section class="faq" id="faq">
     <div class="container">
@@ -1416,7 +1212,7 @@
             <li><a href="#features">Артықшылықтар</a></li>
             <li><a href="#gallery">Жұмыстар</a></li>
             <li><a href="#process">Процесс</a></li>
-            <li><a href="#pricing">Бағалар</a></li>
+            <li><a href="#faq">Сұрақтар</a></li>
           </ul>
         </div>
 
