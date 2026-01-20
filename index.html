@@ -536,61 +536,6 @@
       opacity: 0.8;
     }
 
-    /* ========== FAQ ========== */
-    .faq {
-      padding: 100px 0;
-      background: var(--white);
-    }
-
-    .faq-list {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--gray-200);
-    }
-
-    .faq-question {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 24px 0;
-      background: none;
-      border: none;
-      cursor: pointer;
-      text-align: left;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--gray-900);
-    }
-
-    .faq-question .material-symbols-outlined {
-      transition: transform 0.3s ease;
-      color: var(--primary);
-    }
-
-    .faq-item.active .faq-question .material-symbols-outlined {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 500px;
-    }
-
-    .faq-answer p {
-      padding-bottom: 24px;
-      color: var(--gray-600);
-      line-height: 1.7;
-    }
-
     /* ========== CTA ========== */
     .cta {
       padding: 100px 0;
@@ -705,14 +650,6 @@
     }
 
     /* ========== MOBILE ========== */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-    }
-
     @media (max-width: 1024px) {
       .hero-content {
         grid-template-columns: 1fr;
@@ -759,10 +696,6 @@
     @media (max-width: 768px) {
       nav {
         display: none;
-      }
-
-      .mobile-menu-btn {
-        display: block;
       }
 
       .header-cta .btn {
@@ -873,7 +806,6 @@
           <a href="#features">Артықшылықтар</a>
           <a href="#gallery">Жұмыстар</a>
           <a href="#process">Процесс</a>
-          <a href="#faq">Сұрақтар</a>
         </nav>
 
         <div class="header-cta">
@@ -886,9 +818,6 @@
           </a>
         </div>
 
-        <button class="mobile-menu-btn">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
       </div>
     </div>
   </header>
@@ -1093,81 +1022,6 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">
-          <span class="material-symbols-outlined">help</span>
-          FAQ
-        </div>
-        <h2 class="section-title">Жиі қойылатын сұрақтар</h2>
-      </div>
-
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">
-            Өлшем алу тегін бе?
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-answer">
-            <p>Иә, Алматы қаласы бойынша өлшем алу толығымен тегін. Маман сізге ыңғайлы уақытта үйге келіп, барлық терезелерді өлшейді және кеңес береді.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Тапсырыс қанша уақытта дайын болады?
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-answer">
-            <p>Стандартты тапсырыс 5-10 жұмыс күні ішінде дайын болады. Күрделі жобалар үшін 10-15 күн қажет болуы мүмкін. Шұғыл тапсырыс үшін қосымша төлем арқылы мерзімді қысқартуға болады.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Қандай төлем әдістері бар?
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-answer">
-            <p>Kaspi арқылы төлем, қолма-қол және банк аударымы қабылданады. Бөліп төлеуге де болады: 50% аванс, қалғаны орнату кезінде.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Карниз орнату қызметі бар ма?
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-answer">
-            <p>Иә, карниздерді таңдау, сатып алу және орнату қызметі бар. Потолочный, настенный және электрлі карниздердің барлық түрімен жұмыс істейміз.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Матаны өзім таңдай аламын ба?
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-answer">
-            <p>Әрине! Біздің каталогта 500+ мата түрі бар. Маман сізге үлгілерді көрсетеді, интерьерге сай кеңес береді. Өз матаңызбен де жұмыс істей аламыз.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Кепілдік бар ма?
-            <span class="material-symbols-outlined">expand_more</span>
-          </button>
-          <div class="faq-answer">
-            <p>Иә, барлық жұмысқа кепілдік береміз. Базалық пакетте 6 ай, оптималды пакетте 1 жыл, премиум пакетте 2 жыл кепілдік. Ақаулық болса тегін түзетеміз.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta">
     <div class="container">
@@ -1212,7 +1066,7 @@
             <li><a href="#features">Артықшылықтар</a></li>
             <li><a href="#gallery">Жұмыстар</a></li>
             <li><a href="#process">Процесс</a></li>
-            <li><a href="#faq">Сұрақтар</a></li>
+            <li><a href="#contact">Байланыс</a></li>
           </ul>
         </div>
 
@@ -1258,22 +1112,6 @@
       } else {
         header.classList.remove('scrolled');
       }
-    });
-
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.parentElement;
-        const isActive = item.classList.contains('active');
-
-        // Close all
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-
-        // Open clicked if wasn't active
-        if (!isActive) {
-          item.classList.add('active');
-        }
-      });
     });
 
     // Smooth scroll for anchor links
